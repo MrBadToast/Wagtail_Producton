@@ -15,6 +15,7 @@ public class PlayerBehavior : SerializedMonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField, Range(0f, 1f)] private float accLerp;
     [SerializeField] private float jumpPower;
+    [SerializeField] private LayerMask groundLayermask;
 
     public enum PlayerState
     {
@@ -70,6 +71,13 @@ public class PlayerBehavior : SerializedMonoBehaviour
         input.Player.Aim.canceled += AimUp;
     }
 
+    private void OnDisable()
+    {
+        input.Player.Jump.performed -= Jump;
+        input.Player.Aim.started -= AimDown;
+        input.Player.Aim.canceled -= AimUp;
+    }
+
     private void FixedUpdate()
     {
         GroundCache = GetGroundHit();
@@ -105,11 +113,14 @@ public class PlayerBehavior : SerializedMonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
+        Debug.Log("Jump Ready");
+
         if (currentControlState == PlayerState.NormalControl)
         {
             if (IsGrounded)
             {
                 rbody.velocity = new Vector3(rbody.velocity.x, jumpPower, rbody.velocity.z);
+                Debug.Log("Jump Performed");
             }
         }
     }
@@ -143,7 +154,7 @@ public class PlayerBehavior : SerializedMonoBehaviour
 
     private RaycastHit[] GetGroundHit()
     {
-        return Physics.SphereCastAll(groundCheckCollider.center, groundCheckCollider.radius, Vector3.down, groundCheckCollider.radius);
+        return Physics.SphereCastAll(groundCheckCollider.center, groundCheckCollider.radius, Vector3.down, groundCheckCollider.radius,groundLayermask);
     }
 
 
