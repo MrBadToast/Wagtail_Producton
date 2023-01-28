@@ -8,11 +8,34 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Leaf
-    second: {fileID: 2100000, guid: f26d7634808cf7f49bec36ce38a462bd, type: 2}
+    second: {fileID: -876546973899608171, guid: 774a0bfb7ea7fc744a4991c1e21e42e4,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf.001
+    second: {fileID: -876546973899608171, guid: 774a0bfb7ea7fc744a4991c1e21e42e4,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf.002
+    second: {fileID: -876546973899608171, guid: 774a0bfb7ea7fc744a4991c1e21e42e4,
+      type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trunk
+    second: {fileID: 2100000, guid: cce950ca60df12a478302d787ed427bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk.001
+    second: {fileID: 2100000, guid: cce950ca60df12a478302d787ed427bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk.002
     second: {fileID: 2100000, guid: cce950ca60df12a478302d787ed427bb, type: 2}
   materials:
     materialImportMode: 2
@@ -44,7 +67,10 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.601597
+    - 0.24282394
+    - 0.03677202
     globalScale: 1
     meshCompression: 0
     addColliders: 0
@@ -99,7 +125,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
